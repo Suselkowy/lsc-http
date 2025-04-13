@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: lsc
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: http-claim
+  namespace: lsc
+spec:
+  storageClassName: "lsc"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
